@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    </head>
+
+    <body>
+        <a-scene>
+            <!-------------------------------- Assets Management -------------------------------->
+            <a-assets timeout="10000">
+                <a-assets-item id="environment" src="./environment/scene.gltf"></a-assets-item>
+            </a-assets>
+
+            <a-assets timeout="10000">
+                <a-assets-item id="girl" src="./girl/scene.gltf"></a-assets-item>
+            </a-assets>
+
+            <a-assets timeout="10000">
+                <a-assets-item id="cat" src="./cat/scene.gltf"></a-assets-item>
+            </a-assets>
+
+            <!-------------------------------- Lighting Setup -------------------------------->
+            <!-- Point -->
+            <a-entity></a-entity>
+
+            <!-------------------------------- GLTF Models -------------------------------->
+            <!-- Lamp -->
+            <a-entity>
+                <a-entity position="-5 0 -3" rotation="0 90 0" gltf-model="#environment" shadow="cast: true;"></a-entity>
+            </a-entity>
+
+            <!-- Girl -->
+            <a-entity>
+                <a-entity position="1 0 -4" rotation="0 0 0" scale="0.5 0.5 0.5" gltf-model="#girl" shadow="cast: true;"></a-entity>
+            </a-entity>
+
+            <!-- Cat -->
+            <a-entity>
+                <a-entity position="2 0 -2.8" rotation="0 0 0" scale="0.02 0.02 0.02" gltf-model="#cat" shadow="cast: true;"></a-entity>
+            </a-entity>
+
+        </a-scene>
+    </body>
+</html>
